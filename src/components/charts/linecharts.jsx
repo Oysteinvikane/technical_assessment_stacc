@@ -71,7 +71,13 @@ const LineChart = ({ data, pricearea }) => {
     }
   }, [data, pricearea]);
 
-  return <canvas className="w-full h-64" ref={chartContainer} />;
+  return (
+    <canvas
+      className="w-full"
+      style={{ height: 80, width: "75%" }}
+      ref={chartContainer}
+    />
+  );
 };
 
 export default LineChart;
