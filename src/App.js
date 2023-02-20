@@ -9,6 +9,7 @@ function App() {
   return (
     <Router>
       <Navbar />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
@@ -18,4 +19,4 @@ function App() {
   );
 }
 
-export default App;
+export default AApp;
