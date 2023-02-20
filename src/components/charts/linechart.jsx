@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import Chart from "chart.js/auto";
 
-const LineChart = ({ data, pricearea }) => {
+const LineChart = ({ data, pricearea, title, isDarkMode }) => {
   const chartContainer = useRef(null);
   const chartRef = useRef(null);
 
@@ -10,6 +10,9 @@ const LineChart = ({ data, pricearea }) => {
       chartRef.current.destroy();
     }
     if (chartContainer && chartContainer.current) {
+      const axisColor = isDarkMode ? "#fff" : "#000";
+      const gridColor = isDarkMode ? "#ccc" : "#ddd";
+
       chartRef.current = new Chart(chartContainer.current, {
         type: "line",
         data: {
@@ -21,14 +24,14 @@ const LineChart = ({ data, pricearea }) => {
           ),
           datasets: [
             {
-              label: "NOK_per_kWh",
+              label: "NOK/kWh",
               data: data.map((d) => d.NOK_per_kWh),
               fill: false,
               borderColor: "rgba(75,192,192,1)",
               tension: 0.1,
             },
             {
-              label: "EUR_per_kWh",
+              label: "EUR/kWh",
               data: data.map((d) => d.EUR_per_kWh),
               fill: false,
               borderColor: "rgba(192,75,192,1)",
@@ -37,10 +40,11 @@ const LineChart = ({ data, pricearea }) => {
           ],
         },
         options: {
+          aspectRatio: 5,
           plugins: {
             title: {
               display: true,
-              text: "Electricity prices",
+              text: title,
               font: {
                 size: 20,
               },
@@ -55,26 +59,38 @@ const LineChart = ({ data, pricearea }) => {
                   size: 16,
                 },
               },
+              grid: {
+                color: gridColor,
+              },
+              ticks: {
+                color: axisColor,
+              },
             },
             y: {
               title: {
                 display: true,
-                text: "Price (NOK/kWh or EUR/kWh)",
+                text: "NOK/kWh or EUR/kWh",
                 font: {
                   size: 16,
                 },
+              },
+              grid: {
+                color: gridColor,
+              },
+              ticks: {
+                color: axisColor,
               },
             },
           },
         },
       });
     }
-  }, [data, pricearea]);
+  }, [data, pricearea, title, isDarkMode]);
 
   return (
     <canvas
       className="w-full"
-      style={{ height: 80, width: "75%" }}
+      style={{ height: "100%", width: "75%" }}
       ref={chartContainer}
     />
   );

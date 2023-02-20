@@ -1,3 +1,13 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+select.text-white option {
+  color: black;
+  background-color: white;
+}
+
+#pricearea:hover,
+#pricearea:focus {
+  border-color: #718096;
+}
