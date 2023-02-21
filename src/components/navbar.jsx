@@ -8,7 +8,7 @@ function Navbar(props) {
 
   const linkClasses = `rounded-md px-3 py-2 text-sm font-medium text-${
     isDarkMode ? "gray-300" : "gray-700"
-  } hover:bg-${isDarkMode ? "gray-700" : "gray-200"} hover:text-white`;
+  } hover:bg-${isDarkMode ? "gray-700" : "gray-200"} hover:text-inherit`;
 
   return (
     <nav className={navbarClasses}>
@@ -23,8 +23,8 @@ function Navbar(props) {
                 <Link to="/electricityprices" className={linkClasses}>
                   Electricity Prices
                 </Link>
-                <Link to="/heatmap" className={linkClasses}>
-                  Heatmap
+                <Link to="/predict" className={linkClasses}>
+                  Predict Electricity Usage
                 </Link>
               </div>
             </div>
