@@ -12,10 +12,67 @@ select.text-white option {
   border-color: #718096;
 }
 
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  height: 100%;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.banner {
+  position: relative;
+}
+.banner .content {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.left {
+  flex: 1;
+  padding-right: 1rem;
+}
+
+.right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.box {
+  width: 300px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 1rem;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
 .prediction-container {
   max-width: 600px;
   margin: 0 auto;
   padding: 1rem;
+  margin-left: 20px;
 }
 
 input[type="text"] {
@@ -28,4 +85,15 @@ input[type="text"] {
   background-color: #f5f5f5;
   color: #333;
   margin-bottom: 1rem;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-left: -380px;
+}
+
+.button-container button {
+  width: 150px;
 }

@@ -31,7 +31,7 @@ function Navbar(props) {
           </div>
           <button
             onClick={toggleDarkMode}
-            className="bg-transparent text-gray-500 hover:text-gray-900"
+            className="bg-gray-100 text-gray-900 hover:bg-gray-200 rounded-md py-2 px-4"
           >
             {isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
           </button>

@@ -37,6 +37,10 @@ button {
 
 /* Styles for dark mode */
 
+.dark .bg-gray-200 {
+  background-color: #333333;
+}
+
 body.dark {
   background-color: #333333;
   color: #ffffff;
