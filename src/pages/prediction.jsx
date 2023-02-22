@@ -37,8 +37,8 @@ function Prediction() {
   };
 
   return (
-    <div class="container grid grid-cols-2 gap-10">
-      <div class="left mr-5 mt-10">
+    <div className="container grid grid-cols-2 gap-10">
+      <div className="left mr-5 mt-10">
         <div className="prediction-container">
           <h1 style={{ fontWeight: "bold" }}>Predict kW Usage Per Minute</h1>
           <form onSubmit={handleSubmit} className="prediction-form">
